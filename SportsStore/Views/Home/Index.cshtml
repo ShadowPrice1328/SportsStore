@@ -1,0 +1,10 @@
+@model ProductListViewModel;
+
+@foreach (var p in Model?.Products ?? Enumerable.Empty<Product>())
+{
+    await Html.RenderPartialAsync("ProductSummary", p);
+}
+
+<div page-model="@Model?.PagingInfo" page-action="Index" page-class-enabled="true" page-class="btn"
+    page-class-selected="btn-primary" page-class-normal="btn-outline-dark" class="btn-group pull-right m-1"
+    page-url-category="@Model?.CurrentCategory!"></div>
