@@ -3,7 +3,7 @@ namespace SportsStore.Models
     public class Cart
     {
         public List<CartLine> Lines {get; set;} = new();
-        public void AddItem(Product product, int quantity)
+        public virtual void AddItem(Product product, int quantity)
         {
             // Looking for the same Product in cart with its ID
             CartLine? line = Lines
@@ -22,14 +22,14 @@ namespace SportsStore.Models
             // Already in cart - increases the number
             else line.Quantity += quantity;
         }
-        public void RemoveLine (Product product)
+        public virtual void RemoveLine (Product product)
         {
             Lines.RemoveAll(l => l.Product.ProductId == product.ProductId);
         }
         public decimal ComputeTotalValue() =>
             Lines.Sum(l => l.Product.Price * l.Quantity);
 
-        public void Clear() => Lines.Clear();
+        public virtual void Clear() => Lines.Clear();
     }
     public class CartLine
     {
