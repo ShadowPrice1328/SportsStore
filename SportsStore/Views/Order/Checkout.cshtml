@@ -1,6 +1,9 @@
 @model Order
 
 <h3>Checkout</h3>
+
+<div asp-validation-summary="All" class="text-danger"/>
+
 <form action="Checkout" method="post">
     <div class = "form-group">
         <label>Name: </label><input asp-for="Name" class="form-control" autocomplete="off"/>
