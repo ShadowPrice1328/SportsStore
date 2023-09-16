@@ -6,8 +6,8 @@ namespace SportsStore.Controllers
 {
     public class OrderController : Controller
     {
-        private IOrderRepository repository;
-        private Cart cart;
+        private readonly IOrderRepository repository;
+        private readonly Cart cart;
         public OrderController(IOrderRepository repoService, Cart cartService)
         {
             repository = repoService;
