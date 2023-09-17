@@ -18,6 +18,7 @@ builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession();
 builder.Services.AddScoped<Cart>(SessionCart.GetCart);
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+builder.Services.AddServerSideBlazor();
 
 var app = builder.Build();
 app.UseStaticFiles();
@@ -48,6 +49,8 @@ app.MapControllerRoute(
 
 app.MapDefaultControllerRoute();
 app.MapRazorPages();
+app.MapBlazorHub();
+app.MapFallbackToPage("/admin/{*catchall}", "/Admin/Index");
 app.UseSession();
 
 SeedData.EnsurePopulated(app);
