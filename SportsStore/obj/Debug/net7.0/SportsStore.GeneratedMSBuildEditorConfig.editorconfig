@@ -24,6 +24,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cT3JkZXJzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[c:/Users/Anna/projects/SportsSln/SportsStore/Pages/Admin/OrderTable.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cT3JkZXJUYWJsZS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [c:/Users/Anna/projects/SportsSln/SportsStore/Pages/Admin/Products.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUHJvZHVjdHMucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
