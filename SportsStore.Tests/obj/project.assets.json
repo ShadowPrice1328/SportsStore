@@ -7948,34 +7948,32 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Anna\\.nuget\\packages\\": {}
+    "/home/anna/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Anna\\projects\\SportsSln\\SportsStore.Tests\\SportsStore.Tests.csproj",
+      "projectUniqueName": "/home/anna/development/projects/SportsSln/SportsStore.Tests/SportsStore.Tests.csproj",
       "projectName": "SportsStore.Tests",
-      "projectPath": "C:\\Users\\Anna\\projects\\SportsSln\\SportsStore.Tests\\SportsStore.Tests.csproj",
-      "packagesPath": "C:\\Users\\Anna\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Anna\\projects\\SportsSln\\SportsStore.Tests\\obj\\",
+      "projectPath": "/home/anna/development/projects/SportsSln/SportsStore.Tests/SportsStore.Tests.csproj",
+      "packagesPath": "/home/anna/.nuget/packages/",
+      "outputPath": "/home/anna/development/projects/SportsSln/SportsStore.Tests/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Anna\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "/home/anna/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net7.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "net7.0": {
           "targetAlias": "net7.0",
           "projectReferences": {
-            "C:\\Users\\Anna\\projects\\SportsSln\\SportsStore\\SportsStore.csproj": {
-              "projectPath": "C:\\Users\\Anna\\projects\\SportsSln\\SportsStore\\SportsStore.csproj"
+            "/home/anna/development/projects/SportsSln/SportsStore/SportsStore.csproj": {
+              "projectPath": "/home/anna/development/projects/SportsSln/SportsStore/SportsStore.csproj"
             }
           }
         }
@@ -8031,7 +8029,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/7.0.401/RuntimeIdentifierGraph.json"
       }
     }
   }
