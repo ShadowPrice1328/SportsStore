@@ -1,7 +1,13 @@
 @page "/admin/orders"
 @inherits OwningComponentBase<IOrderRepository>
 
-<h4>This is the order section</h4>
+<OrderTable TableTitle="Unshipped Orders"
+    Orders="UnshippedOrders" OrderSelected="ShipOrder"/>
+
+<OrderTable TableTitle="Shipped Orders"
+    Orders="ShippedOrders" OrderSelected="ResetOrder" ButtonLabel="Reset"/>
+
+<button class = "btn btn-info" @onclick = "@(e => UpdateData())">Refresh</button>
 
 @code {
     public IOrderRepository Repository => Service;
