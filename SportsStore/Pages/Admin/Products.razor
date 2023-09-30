@@ -1,4 +1,43 @@
 @page "/admin/products"
 @page "/admin"
+@inherits OwningComponentBase<IStoreRepository>
 
-<h4>This is the product section</h4>
+<table class = "table table-striped table-sm table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th><th>Name</th>
+            <th>Category</th><th>Price</th><td/>
+        </tr>
+    </thead>
+    <tbody>
+        @if (ProductData.Count() > 0)
+        {
+            foreach (Product p in ProductData)
+            {
+                <tr>
+                    <td>@p.ProductId</td><td>@p.Name</td>
+                    <td>@p.Category</td><td>@p.Price.ToString("c")</td>
+                    <td>
+                        <NavLink class = "btn btn-info btn-sm" href = "@DetailsUrl(p.ProductId ?? 0)">Details </NavLink>
+                        <NavLink class = "btn btn-warning btn-sm" href = "@EditUrl(p.ProductId ?? 0)">Edit </NavLink>
+                    </td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>
+
+@code {
+    public IStoreRepository Repository => Service;
+    public IEnumerable<Product> ProductData {get; set;} = Enumerable.Empty<Product>();
+    public async Task UpdataData()
+    {
+        ProductData = await Repository.Products.ToListAsync();
+    }
+    protected async override Task OnInitializedAsync()
+    {
+        await UpdataData();
+    }
+    public string EditUrl(long id) => $"/admin/products/edit/{id}";
+    public string DetailsUrl(long id) => $"/admin/products/details/{id}";
+}
