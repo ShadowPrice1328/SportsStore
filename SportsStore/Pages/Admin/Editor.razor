@@ -1,0 +1,74 @@
+@page "/admin/products/edit/{id:long}"
+@page "/admin/products/create"
+
+@inherits OwningComponentBase<IStoreRepository>;
+
+<h3 class = "bg-@ThemeColor text-white text-center p-1">@TitleText form</h3>
+
+<EditForm Model="Product" OnValidSubmit="SaveProduct">
+    <DataAnnotationsValidator/>
+    
+    @if (Id != 0)
+    {
+        <div class = "form-group">
+            <label>Id</label>
+            <input class="form-control" disabled value="@Product.ProductId">
+        </div>
+    }
+
+    <div class = "form-group">
+        <label>Name</label>
+        <ValidationMessage For="@(() => Product.Name)" />
+        <InputText class = "form-control" @bind-Value="Product.Name"/>
+    </div>
+    <div class = "form-group">
+        <label>Description</label>
+        <ValidationMessage For="@(() => Product.Description)" />
+        <InputText class = "form-control" @bind-Value="Product.Description"/>
+    </div>
+    <div class = "form-group">
+        <label>Category</label>
+        <ValidationMessage For="@(() => Product.Category)" />
+        <InputText class = "form-control" @bind-Value="Product.Category"/>
+    </div>
+    <div class = "form-group">
+        <label>Price</label>
+        <ValidationMessage For="@(() => Product.Price)"/>
+        <InputNumber class = "form-control" @bind-Value="Product.Price"/>
+    </div>
+    <div class = "mt-2">
+        <button type = "submit" class = "btn btn-@ThemeColor">Save</button>
+        <NavLink class = "btn btn-secondary" href = "/admin/products">Cancel</NavLink>            
+    </div>
+</EditForm>
+
+@code {
+    public IStoreRepository Repository => Service;
+    [Parameter]
+    public long Id {get; set;} = 0;
+    [Inject]
+    public NavigationManager? NavManager {get; set;}
+    public Product Product {get; set;} = new();
+    protected override void OnParametersSet()
+    {
+        if (Id != 0)
+        {
+            Product = Repository?.Products.FirstOrDefault(p => p.ProductId == Id) ?? new();
+        }
+    }
+    public void SaveProduct()
+    {
+        if (Id == 0)
+        {
+            Repository.CreateProduct(Product);
+        }
+        else
+        {
+            Repository.SaveProduct(Product);
+        }
+
+        NavManager?.NavigateTo("/admin/products");
+    }
+    public string TitleText => Id == 0 ? "Create" : "Edit";
+    public string ThemeColor => Id == 0 ? "success" : "warning";
+}
