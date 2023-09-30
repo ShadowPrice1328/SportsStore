@@ -3,6 +3,10 @@
 
 @inherits OwningComponentBase<IStoreRepository>;
 
+<style>
+    div.validation-message {color: rgb(220, 53, 69); font-weight: 500;}
+</style>
+
 <h3 class = "bg-@ThemeColor text-white text-center p-1">@TitleText form</h3>
 
 <EditForm Model="Product" OnValidSubmit="SaveProduct">
