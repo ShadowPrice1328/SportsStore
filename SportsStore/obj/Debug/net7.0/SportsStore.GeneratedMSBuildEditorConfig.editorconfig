@@ -20,6 +20,10 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vQWRtaW5MYXlvdXQucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
+[/home/anna/development/projects/SportsSln/SportsStore/Pages/Admin/Details.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vRGV0YWlscy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [/home/anna/development/projects/SportsSln/SportsStore/Pages/Admin/Orders.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXMvQWRtaW4vT3JkZXJzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 

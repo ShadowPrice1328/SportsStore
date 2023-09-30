@@ -27,6 +27,8 @@
     </tbody>
 </table>
 
+<NavLink class = "btn btn-success" href = "/admin/products/create">Create</NavLink>
+
 @code {
     public IStoreRepository Repository => Service;
     public IEnumerable<Product> ProductData {get; set;} = Enumerable.Empty<Product>();
