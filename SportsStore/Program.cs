@@ -1,4 +1,5 @@
 using SportsStore.Models;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,12 @@ builder.Services.AddDbContext<StoreDbContext>(opts => {
         builder.Configuration["ConnectionStrings:SportsStoreConnection"]
     );
 });
+builder.Services.AddDbContext<AppIdentityDbContext>(opts => {
+    opts.UseSqlServer(
+        builder.Configuration["ConnectionStrings:IdentityConnection"]
+    );
+});
+builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AppIdentityDbContext>();
 
 builder.Services.AddScoped<IStoreRepository, EFStoreRepository>();
 builder.Services.AddScoped<IOrderRepository, EFOrderRepository>();
@@ -16,6 +23,10 @@ builder.Services.AddScoped<IOrderRepository, EFOrderRepository>();
 builder.Services.AddRazorPages();
 builder.Services.AddDistributedMemoryCache();
 builder.Services.AddSession();
+
+builder.Services.AddAuthentication();
+builder.Services.AddAuthorization();
+
 builder.Services.AddScoped<Cart>(SessionCart.GetCart);
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddServerSideBlazor();
@@ -54,5 +65,6 @@ app.MapFallbackToPage("/admin/{*catchall}", "/Admin/Index");
 app.UseSession();
 
 SeedData.EnsurePopulated(app);
+IdentitySeedData.EnsurePopulated(app);
 
 app.Run();

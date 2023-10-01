@@ -148,3 +148,9 @@ C:/Users/Anna/projects/SportsSln/SportsStore/bin/Debug/net7.0/SportsStore.static
 /home/anna/development/projects/SportsSln/SportsStore/obj/Debug/net7.0/SportsStore.pdb
 /home/anna/development/projects/SportsSln/SportsStore/obj/Debug/net7.0/SportsStore.genruntimeconfig.cache
 /home/anna/development/projects/SportsSln/SportsStore/obj/Debug/net7.0/ref/SportsStore.dll
+/home/anna/development/projects/SportsSln/SportsStore/bin/Debug/net7.0/Microsoft.AspNetCore.Cryptography.Internal.dll
+/home/anna/development/projects/SportsSln/SportsStore/bin/Debug/net7.0/Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+/home/anna/development/projects/SportsSln/SportsStore/bin/Debug/net7.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+/home/anna/development/projects/SportsSln/SportsStore/bin/Debug/net7.0/Microsoft.Extensions.Identity.Core.dll
+/home/anna/development/projects/SportsSln/SportsStore/bin/Debug/net7.0/Microsoft.Extensions.Identity.Stores.dll
+/home/anna/development/projects/SportsSln/SportsStore/bin/Debug/net7.0/Microsoft.Extensions.Options.dll
