@@ -32,6 +32,18 @@ builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddServerSideBlazor();
 
 var app = builder.Build();
+
+if (app.Environment.IsProduction())
+{
+    app.UseExceptionHandler("/error");
+}
+
+app.UseRequestLocalization(opts => {
+    opts.AddSupportedCultures("en-US").
+    AddSupportedUICultures("en-US").
+    SetDefaultCulture("es-US");
+});
+
 app.UseStaticFiles();
 
 app.MapControllerRoute(
